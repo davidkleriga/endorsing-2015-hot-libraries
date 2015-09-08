@@ -1,0 +1,48 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../post-service/skill-service.html">
+
+<polymer-element name="skill-list" attributes="show">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    </style>
+    
+    <skill-service id='skill-service' person-skillset='[[skills]]' person='[[person]]'>
+
+    </skill-service>
+
+    <div layout vertical center>
+
+      <template repeat="[[skill in personSkillset]]">
+        <label>skill list for [[person.username]]</label>
+
+        <iron-list items='[[personSkillset]]' as='skill' flex>
+
+          <template>
+            <label>[[skill.name]]</label>
+          </template>
+
+        </iron-list>
+      </template>
+
+    </div>
+    
+  </template>
+
+  <script>
+  Polymer({
+
+    created: function(){
+      this.personSkillset = [ ];
+    },
+
+    properties: {
+      person: Object,
+    }
+  });
+  </script>
+
+</polymer-element>

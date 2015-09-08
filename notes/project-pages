@@ -1,0 +1,24 @@
+
+React
+https://www.npmjs.com/package/react
+
+install 
+npm install --save react
+*note* runs in production mode unless NODE_ENV is set to "production"
+
+Polymer
+https://www.polymer-project.org/1.0/docs/start/getting-the-code.html
+
+Install
+
+preferred through Bower, I decided to use the Yeoman generator for a jumpstart
+https://www.npmjs.com/package/generator-polymer
+
+
+Meteor
+
+https://www.npmjs.com/package/meteor
+
+Install
+
+curl https://install.meteor.com | /bin/sh

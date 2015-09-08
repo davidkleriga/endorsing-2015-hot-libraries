@@ -1,0 +1,46 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../post-service/friend-service.html">
+<link rel="import" href="friend-card.html">
+<link rel="import" href="skill-list.html">
+
+<polymer-element name="friend-list" attributes="show">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    friend-card {
+      margin-bottom: 30px;
+    }
+    </style>
+    
+    <friend-service id='friend-service' friends='{{friends}}'>
+
+    </friend-service>
+
+    <div layout vertical center>
+
+      <h3> friend list</h3>
+
+      <template repeat="{{friend in friends}}">
+        <friend-card>
+          <img src="{{friend.avatar}}" width="70" height="70">
+          <h2>{{friend.username}}</h2>
+          <p>{{friend.status}}</p>
+
+          <skill-list person='[[friend]]'>
+
+          </skill-list>
+        </friend-card>
+      </template>
+
+    </div>
+    
+  </template>
+
+  <script>
+  Polymer({});
+  </script>
+
+</polymer-element>
